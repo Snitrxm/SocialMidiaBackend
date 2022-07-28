@@ -31,4 +31,6 @@ model Post {
   userId String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("posts")
 }

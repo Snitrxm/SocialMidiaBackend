@@ -4,10 +4,10 @@ import { ensureAuthenticated } from "../../../../../api/middlewares/ensureAuthen
 import { CreatePostController } from "../controllers/CreatePostController";
 import { CreatePostValidator } from "../validators/CreatePostValidator";
 
-export const postRoutes = Router();
+export const postsRoutes = Router();
 
 const createPostController = new CreatePostController();
 
-postRoutes.use(ensureAuthenticated);
+postsRoutes.use(ensureAuthenticated);
 
-postRoutes.post("/", CreatePostValidator, createPostController.handle);
+postsRoutes.post("/", CreatePostValidator, createPostController.handle);
