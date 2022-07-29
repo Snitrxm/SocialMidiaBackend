@@ -3,7 +3,7 @@ import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 
 import { AppError } from "../../../api/errors/AppError";
-import { IAuthenticateUserDTO } from "../dtos/iAuthenticateUserDTO";
+import { IAuthenticateUserDTO } from "../dtos/IAuthenticateUserDTO";
 import { IUsersRepository } from "../repositories/IUsersRepository";
 
 interface IResponse {

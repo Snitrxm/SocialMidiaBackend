@@ -11,26 +11,39 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
+  id         String      @id @default(uuid())
   name       String
-  email      String   @unique
+  email      String      @unique
   password   String
   birth_date DateTime
+  followers  Int         @default(0)
   Post       Post[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  Followers  Followers[]
 
   @@map("users")
 }
 
 model Post {
-  id     String @id @default(uuid())
-  title  String
-  body   String
-  user   User   @relation(fields: [userId], references: [id])
-  userId String
+  id        String   @id @default(uuid())
+  title     String
+  body      String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("posts")
+}
+
+model Followers {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  followerId String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("followers")
 }
