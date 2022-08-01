@@ -13,6 +13,7 @@ datasource db {
 model User {
   id         String      @id @default(uuid())
   name       String
+  username   String?      @unique
   email      String      @unique
   password   String
   birth_date DateTime
@@ -29,6 +30,7 @@ model Post {
   id        String   @id @default(uuid())
   title     String
   body      String
+  likes     Int      @default(0)
   user      User     @relation(fields: [userId], references: [id])
   userId    String
   createdAt DateTime @default(now())

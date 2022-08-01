@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import "express-async-errors";
+import cors from "cors";
 import express from "express";
 
 import { v1Routes } from "./api/http/v1Routes";
@@ -8,6 +9,7 @@ import "./shared/container";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use(v1Routes);
 app.use(ErrorMiddleware);

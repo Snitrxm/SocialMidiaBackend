@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.1.4",
+    "@types/cors": "^2.8.12",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/multer": "^1.4.7",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
@@ -29,6 +30,7 @@
     "@types/express": "^4.17.13",
     "bcrypt": "^5.0.1",
     "celebrate": "^15.0.1",
+    "cors": "^2.8.5",
     "d": "^1.0.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",

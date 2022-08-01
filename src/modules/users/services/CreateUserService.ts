@@ -29,12 +29,18 @@ export class CreateUserService {
 
     const hashedPassword = await hash(password, 8);
 
+    const username = `@${name}`;
+
     const user = await this.usersRepository.create({
       name,
       email,
       password: hashedPassword,
       birth_date: new Date(birth_date),
     });
+
+    user.username = username;
+
+    await this.usersRepository.save(user);
 
     return user;
   }
